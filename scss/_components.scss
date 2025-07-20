@@ -1,0 +1,173 @@
+@use 'variables';
+@use 'mixins';
+
+// Estilos para enlaces
+a {
+  text-decoration: none;
+
+  &:hover {
+    font-weight: variables.$font-weight-bold;
+  }
+}
+
+// Efecto 3D en tipografía
+.text-3d {
+  color: white;
+  text-shadow:
+    1px 1px 0 #999,
+    2px 2px 0 #888,
+    3px 3px 0 #777,
+    4px 4px 0 #666,
+    5px 5px 0 #555,
+    6px 6px 0 #444,
+    7px 7px 0 #333,
+    8px 8px 0 #222,
+    9px 9px 10px rgba(0, 0, 0, 0.6);
+}
+
+// Estilos para botones con imagen
+.img-button {
+  -webkit-text-stroke: 0.2px black; // Para navegadores WebKit (Chrome, Safari)
+  text-stroke: 0.2px black; // Propiedad estándar
+  font-size: 25px;
+  background-image: url('../assets/bg_button_img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.container_build {
+   h1, h2, h3, li {
+     color: variables.$dark-text;
+  }
+}
+
+.panel {
+   li {
+     color: variables.$dark-text;
+  }
+}
+.stat-item {
+  background-color: variables.$stat-bg;
+  padding: 10px;
+  border-radius: 5px;
+
+  .stat-value {
+    font-weight: bold;
+    color: variables.$primary-color;
+  }
+}
+
+.effects-list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    background-color: variables.$effect-bg;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-left: 4px solid variables.$primary-color;
+  }
+}
+
+.item-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.item-card {
+  border: 1px solid variables.$border-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: variables.$hover-bg;
+  }
+
+  .item-name {
+    font-weight: bold;
+    color: variables.$dark-text;
+  }
+
+  .item-stats {
+    font-size: 0.9em;
+    color: variables.$light-text;
+  }
+
+  .item-effect {
+    font-size: 0.85em;
+    color: variables.$success-color;
+    margin-top: 5px;
+  }
+}
+
+.equipment-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.equipment-item {
+  background-color: variables.$stat-bg;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Botones
+.btn {
+  @include mixins.button-style(variables.$primary-color, variables.$primary-dark);
+
+  &-danger {
+    @include mixins.button-style(variables.$danger-color, variables.$danger-dark);
+  }
+
+  &-success {
+    @include mixins.button-style(variables.$success-color, variables.$success-dark);
+  }
+}
+
+.remove-btn {
+  @include mixins.button-style(variables.$danger-color, variables.$danger-dark);
+  padding: 3px 8px;
+}
+
+.active-tab {
+  background-color: variables.$primary-dark;
+}
+
+// Pestañas
+.tab-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+// Formularios
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid variables.$border-color;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+// Notificaciones
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: variables.$success-color;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+}

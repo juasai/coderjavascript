@@ -1,0 +1,39 @@
+@use 'variables';
+@use 'mixins';
+
+// Estilos para el header
+header {
+  background-color: variables.$primary-color;
+}
+
+// Estilos para el main
+main {
+  background-image: url('../assets/backgroundMain.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: variables.$secondary-color; // Color si la imagen no carga
+}
+
+nav {
+  font-family: variables.$font-family-primary;
+  color: variables.$text-color;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.container_build {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.panel {
+  @include mixins.card-style;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}

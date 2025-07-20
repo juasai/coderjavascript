@@ -1,0 +1,20 @@
+@use 'variables';
+
+// Tipografía base
+.theme_fonts {
+  font-family: variables.$font-family-primary;
+  color: variables.$text-color;
+}
+
+h1 {
+  font-family: variables.$font-family-primary;
+  color: variables.$text-color;
+  font-optical-sizing: auto;
+  font-weight: variables.$font-weight-bold;
+  font-style: normal;
+}
+
+h3, h4, li, p {
+  color: variables.$text-color;
+}
+

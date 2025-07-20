@@ -1,0 +1,25 @@
+@use 'variables';
+
+@mixin card-style {
+  background-color: variables.$card-bg;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin button-style($bg-color, $hover-color) {
+  background-color: $bg-color;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+

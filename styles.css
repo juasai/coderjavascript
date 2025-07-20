@@ -1,0 +1,82 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+h2 {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+/* Sección de explicación */
+#explicacion {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.features, .how-it-works {
+    margin: 1.5rem 0;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.tip {
+    background-color: #e3f2fd;
+    padding: 1rem;
+    border-left: 4px solid #3498db;
+    border-radius: 0 4px 4px 0;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    #explicacion {
+        padding: 1rem;
+    }
+}

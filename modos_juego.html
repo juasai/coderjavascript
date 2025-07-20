@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>El rincon del moba</title>
+        <link rel="icon" type="image/x-icon" href="../assets/logo.svg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- tipografias -->
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nova+Flat&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+        <!-- estilos de bootstrap  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+        <!-- libreria de animaciones aos -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <!-- mis estilos -->
+        <link href="../css/style.css" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <!-- encabezado de la pagina -->
+       <header>
+           <!-- Menu de navegación responsivo -->
+           <nav class="navbar navbar-expand-lg navbar-dark bg-main p-3">
+               <div class="container-fluid">
+                   <!-- Logo/Brand - visible en todos los dispositivos -->
+                   <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                       <img src="../assets/logo_image_slogan.png" alt="MLBB" width="120" height="40" class="d-none d-sm-block">
+                       <img src="../assets/logo_image_slogan.png" alt="MLBB" width="80" height="30" class="d-block d-sm-none">
+                   </a>
+
+                   <!-- Botón hamburguesa - solo visible en móvil/tablet -->
+                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                       <span class="navbar-toggler-icon"></span>
+                   </button>
+
+                   <!-- Contenido colapsable -->
+                   <div class="collapse navbar-collapse fs-5" id="navbarNav">
+                       <ul class="navbar-nav">
+                           <li class="nav-item d-flex align-items-center mx-auto">
+                               <a class="nav-link link-light" aria-current="page" href="../index.html">
+                                   <img src="../assets/home_icon.svg" height="20" class="me-2">Inicio
+                                   <!-- <span class="d-none d-lg-inline">Inicio</span> -->
+                               </a>
+                           </li>
+                           <li class="nav-item d-flex align-items-center mx-auto">
+                               <a class="nav-link link-light" href="../pages/modos_juego.html">
+                                   <img src="../assets/gamemode_icon.svg" height="20" class="me-2">Modos de juego
+                                   <!-- <span class="d-none d-lg-inline">Modos de juego</span> -->
+                               </a>
+                           </li>
+                           <li class="nav-item d-flex align-items-center mx-auto">
+                               <a class="nav-link link-light" href="../pages/heroes.html">
+                                   <img src="../assets/heroe_icon.svg" height="20" class="me-2">Heroes
+                                   <!-- <span class="d-none d-lg-inline">Heroes</span> -->
+                               </a>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+       </header>
+
+       <main>
+            <!-- presentacion inicial -->
+          <section class="position-relative w-80">
+            <div class="row align-items-start">
+                <video  autoplay muted loop>
+                    <source src="../assets/media_modos.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- divisor -->
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-6 text-center">
+                     <img src="../assets/split2.png" class="img-fluid" alt="divisor">
+                  </div>
+               </div>
+            </div>
+            <h1 class=text-center >Modo de Juego</h1>
+           </section>
+           <!-- botones de navegacion -->
+          <section class="container">
+            <div class="row m-4 d-flex flex-column flex-md-row align-items-center justify-content-center">
+               <div class="col text-center text-md-end mb-3 mb-md-0" data-aos="fade-right"  data-aos-duration="3000" data-aos-offset="10">
+                  <a class="btn img-button theme_fonts " href="#coliseo">Coliseo</a>
+               </div>
+               <div class="col text-center mb-3 mb-md-0" data-aos="flip-left"  data-aos-duration="3000" data-aos-offset="10">
+               <a class="btn img-button theme_fonts " href="#clasica" >Clasica</a>
+               </div>
+               <div class="col text-center text-md-start" data-aos="fade-left"  data-aos-duration="3000" data-aos-offset="10">
+               <a class="btn img-button theme_fonts" href="#clasificatoria" >Clasificatoria</a>
+               </div>
+            </div>
+          </section>
+          <!-- divisor -->
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-6 text-center">
+                     <img src="../assets/split2.png" class="img-fluid" alt="divisor">
+                  </div>
+               </div>
+            </div>
+          <!-- seccion Coliseo -->
+          <section>
+            <div id ="coliseo">
+              <article>
+                <div class="container mt-5 fs-5">
+                   <div class="row">
+                     <div class="d-flex flex-column col text-center m-5">
+                       <h1>Coliseo</h1>
+                       <img src="../assets/coliseo.jpg" alt="Coliseo" d-flex>
+                     </div>
+                     <div class="d-flex flex-column col">
+                        <p>El <strong>Modo Coliseo </strong> es un modo de juego especial que se enfoca en combates 5 vs 5 un mapa pequeño y cerrado</p>
+                        <p>Las caracteristicas principales de este modo son:<br>
+                            <ol>
+                                <li>Formato de combate:<br>
+                                   Dos equipos de 5 jugadores compiten entre sí.
+                                </li>
+                                <li>Mapa Pequeño: <br>
+                                  El escenario es reducido de un solo carril, donde se encuentra 2 torretas para cada equipo y 2 mounstros de la jungla al igual que un par de arbustos.
+                                </li>
+                                <li>Objetivo:<br>
+                                    Derrumbar el nexo enemigo destruyento las torres enemigas
+                                </li>
+                                <li>Mecánicas Especiales:<br>
+                                    <ul>
+                                        <li>Sin recall ni regreso a base: No puedes volver a base para curarte o comprar items.</li>
+                                        <li>Items limitados: Solo puedes comprar items entre rounds, no durante el combate.</li>
+                                        <li>Nivel y oro acelerados: Subes de nivel rápidamente para evitar partidas largas.</li>
+                                        <li>Nexo: cuando mueres, puedes comprar items antes de salir de la sona de inicio.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                       </p>
+                     </div>
+                   </div>
+               </div>
+              </article>
+            </div>
+          </section>
+          <!-- divisor -->
+          <div class="container">
+             <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                   <img src="../assets/split2.png" class="img-fluid" alt="divisor">
+                </div>
+             </div>
+          </div>
+
+          <!-- seccion Clasica -->
+          <section>
+            <div id ="clasica">
+              <article>
+                <div class="container mt-5 fs-5">
+                   <div class="d-flex flex-row-reverse">
+                     <div class="d-flex flex-column col text-center m-">
+                       <h1>Clasica</h1>
+                       <img src="../assets/classic.jpg" alt="Coliseo" d-flex>
+                     </div>
+                     <div class="d-flex flex-column col">
+                        <p>El <strong>Modo Clasica </strong> es el formato estándar del juego, donde dos equipos de 5 jugadores se enfrentan en un mapa de 3 carriles (superior, medio e inferior) con el objetivo principal de destruir el Nexo enemigo </p>
+                        <p>Las caracteristicas principales de este modo son:<br>
+                            <ol>
+                                <li>Formato de combate:<br>
+                                  <ul>
+                                    <li>
+                                  5 vs 5: Dos equipos de cinco jugadores compiten en el mapa principal (Land of Dawn).
+                                    </li>
+                                    <li>
+                                  Roles definidos: Tanque, tirador, mago, asesino, soporte, etc., con distribución estratégica por carriles.
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>Mapa Completo: <br>
+                                  <ul>
+                                    <li>
+                                      3 carriles (Superior, Medio e Inferior) + Área de jungla.
+                                    </li>
+                                    <li>
+                                      Estructuras clave:
+                                      <ul>
+                                        <li>
+                                         Torretas: Defienden cada carril y deben ser destruidas para avanzar.
+                                        </li>
+                                        <li>
+                                         Base: Contiene el Santuario (que cura al equipo) y el Nexo (objetivo final).
+                                        </li>
+                                        <li>
+                                         Monstruos y Buffs: En la jungla (como el Lithowanderer o el Buff de Tortuga).
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>Objetivo:<br>
+                                    <ul>
+                                      <li>
+                                        Destruir el Nexo enemigo: El objetivo principal es destruir el Nexo del equipo contrario.
+                                      </li>
+                                      <li>
+                                        Destruir torretas y inhibidores: Para avanzar en el mapa y debilitar al enemigo.
+                                      </li>
+                                </li>
+                                <li>Mecánicas clave:<br>
+                                    <ul>
+                                        <li>Recuperación de vida: Puedes regresar a base para curarte y comprar items.</li>
+                                        <li>Items ilimitados: Puedes comprar items en cualquier momento.</li>
+                                        <li>Nivel y oro normal: La progresión es más equilibrada y estratégica.</li>
+                                        <li>Respawn: Cuando mueres, respawneas en la base después de un tiempo.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                       </p>
+                     </div>
+                   </div>
+               </div>
+              </article>
+            </div>
+          </section>
+          <!-- divisor -->
+          <div class="container">
+             <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                   <img src="../assets/split2.png" class="img-fluid" alt="divisor">
+                </div>
+             </div>
+          </div>
+          <!-- seccion Clasificatoria -->
+          <section>
+            <div id ="clasificatoria">
+              <article>
+                <div class="container mt-5 fs-5">
+                   <div class="row">
+                     <div class="d-flex flex-column col text-center m-5">
+                       <h1>Clasificatoria</h1>
+                       <img src="../assets/rank.jpg" alt="rank" d-flex>
+                     </div>
+                     <div class="d-flex flex-column col">
+                        <p>El <strong>Modo clasificatoria </strong> es el formato competitivo y principal de Mobile Legends, donde los jugadores compiten para subir de rango (desde Guerrero hasta Mítico/Gloria Mitica) y demostrar su habilidad.</p>
+                        <p>En este modo se tiene el mismo formato de combate, mapa y objetivo que el modo clasico, pero con las siguientes diferencias:<br>
+                            <ol>
+                                <li>Sistema de Rangos y Estrellas:<br>
+                                    <ul>
+                                        <li>Pérdida/Ganancia de estrellas: Ganas estrellas al vencer, las pierdes al perder.</li>
+                                        <li>Ligas o divisiones: Desde Guerrero hasta Mítico (y Glory Mitica).</li>
+                                        <li> Puntos de Protección: Evitan perder estrellas en ciertas condiciones.</li>
+                                    </ul>
+                                </li>
+                                <li>Selección de Héroes (Draft Pick):<br>
+                                    <ul>
+                                        <li>Fase de prohibiciones (Baneo): Cada equipo puede banear 2-3 héroes (según el rango).</li>
+                                        <li>Elección por turnos: Selección estratégica de héroes en orden rotativo.</li>
+                                        <li>Restricciones: No se puede repetir héroe en el mismo equipo.</li>
+                                    </ul>
+                                </li>
+                                <li>Recompensas y Competitividad:<br>
+                                    <ul>
+                                        <li>Recompensas de temporada: Skins exclusivos, emblemas y otros premios al subir de rango.</li>
+                                        <li>Mayor dificultad: Los jugadores suelen ser más serios y coordinados que en Clásico.</li>
+                                        <li>Puntos de Clasificación (Mítico+): Define tu posición en el leaderboard global.</li>
+                                    </ul>
+                                </li>
+
+                            </ol>
+                       </p>
+                     </div>
+                   </div>
+               </div>
+              </article>
+            </div>
+          </section>
+
+        </main>
+        <footer class="text-center bg-dark theme_fonts">
+          <!-- divisor -->
+          <div class="container">
+             <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                   <img src="../assets/split2.png" class="img-fluid" alt="divisor">
+                </div>
+             </div>
+          </div>
+          <div class="pt-5 pb-2 fs-3">
+             <div class="row row-cols-4">
+                 <div class="col">
+                     <a href="#" class="link-light">Politica de privacidad</a>
+                 </div>
+                 <div class="col">
+                     <a href="#" class="link-light">Politica de cookies</a>
+                 </div>
+                 <div class="col">
+                     <a href="#" class="link-light">Avisos legales</a>
+                 </div>
+                 <div class="col">
+                     <a href="#" class="link-light">Contactenos</a>
+                 </div>
+             </div>
+
+          </div>
+       </footer>
+
+    <!-- Enlace a los scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+
+    <!-- script para aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    </body>
+</html>
