@@ -1,69 +1,44 @@
-// Base de datos de items para tanques
-const itemsTanque = [
-    {
-        nombre: "Cursed Helmet",
-        imagen: "../assets/cursed_helmet.jpg",
-        hp: 1200,
-        armadura: 0,
-        resMagica: 25,
-        precio: 1760,
-        efecto: "Quema enemigos cercanos (1.5% HP enemigo como daño mágico por segundo)"
-    },
-    {
-        nombre: "Athena's Shield",
-        imagen: "../assets/athenea_shield.jpg",
-        hp: 900,
-        armadura: 0,
-        resMagica: 62,
-        precio: 2150,
-        efecto: "Escudo mágico que absorbe daño (se recarga después de no recibir daño por 5s)"
-    },
-    {
-        nombre: "Antique Cuirass",
-        imagen: "../assets/antique_cuirass.jpg",
-        hp: 1220,
-        armadura: 54,
-        resMagica: 0,
-        precio: 2170,
-        efecto: "Reduce el daño físico recibido de ataques repetidos del mismo enemigo"
-    },
-    {
-        nombre: "Blade Armor",
-        imagen: "../assets/blade_armon.jpg",
-        hp: 0,
-        armadura: 90,
-        resMagica: 0,
-        precio: 1660,
-        efecto: "Refleja el 25% del daño físico recibido de ataques básicos"
-    },
-    {
-        nombre: "Dominance Ice",
-        imagen: "../assets/dominance_ice.jpg",
-        hp: 700,
-        armadura: 70,
-        resMagica: 0,
-        precio: 2010,
-        efecto: "Reduce la velocidad de ataque y regeneración de HP de enemigos cercanos"
-    },
-    {
-        nombre: "Immortality",
-        imagen: "../assets/immortality.jpg",
-        hp: 800,
-        armadura: 40,
-        resMagica: 0,
-        precio: 2120,
-        efecto: "Revive con 15% HP después de morir (enfriamiento 180s)"
-    },
-    {
-        nombre: "Brute Force Breastplate",
-        imagen: "../assets/brute_force_breastplate.jpg",
-        hp: 770,
-        armadura: 45,
-        resMagica: 45,
-        precio: 1870,
-        efecto: "Aumenta movilidad y resistencia después de usar habilidades"
+// URL del JSON remoto
+const ITEMS_JSON_URL = 'https://raw.githubusercontent.com/juasai/MLBB-API/refs/heads/test/my_json/v1/item_tank.json';
+
+// Variable global para los items (se cargará desde el JSON remoto)
+let itemsTanque = [];
+
+// Función para cargar los items desde el JSON externo
+async function cargarItems() {
+    try {
+        showNotification("Cargando items...", true);
+        const response = await fetch(ITEMS_JSON_URL);
+        if (!response.ok) {
+            throw new Error('No se pudo cargar los items');
+        }
+        itemsTanque = await response.json();
+    } catch (error) {
+        console.error("Error al cargar items:", error);
+        // Datos de respaldo en caso de error
+        itemsTanque = [
+            {
+                nombre: "Cursed Helmet",
+                imagen: "../assets/cursed_helmet.jpg",
+                hp: 1200,
+                armadura: 0,
+                resMagica: 25,
+                precio: 1760,
+                efecto: "Quema enemigos cercanos (1.5% HP enemigo como daño mágico por segundo)"
+            },
+            {
+                nombre: "Athena's Shield",
+                imagen: "../assets/athenea_shield.jpg",
+                hp: 900,
+                armadura: 0,
+                resMagica: 62,
+                precio: 2150,
+                efecto: "Escudo mágico que absorbe daño (se recarga después de no recibir daño por 5s)"
+            }
+        ];
+        showNotification("Usando datos locales. No se pudieron cargar los items remotos.", false);
     }
-];
+}
 
 // Variables globales inicializadas desde LocalStorage
 let equipamiento = JSON.parse(localStorage.getItem('equipamiento')) || [];
@@ -210,6 +185,11 @@ function actualizarEquipamientoUI() {
 // Función para mostrar los items disponibles
 function mostrarItemsDisponibles() {
     itemListElement.innerHTML = '';
+
+    if (itemsTanque.length === 0) {
+        itemListElement.innerHTML = '<p>Cargando items...</p>';
+        return;
+    }
 
     itemsTanque.forEach((item, index) => {
         const itemCard = document.createElement('div');
@@ -366,8 +346,16 @@ viewEquipmentBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', reiniciarEquipamiento);
 
+// Función para recargar los items desde el JSON remoto
+async function recargarItems() {
+    await cargarItems();
+    mostrarItemsDisponibles();
+    showNotification("Items recargados correctamente", true);
+}
+
 // Inicialización
-function init() {
+async function init() {
+    await cargarItems(); // Esperar a que se carguen los items primero
     cargarEstado();
     actualizarEstadisticasUI();
     actualizarEquipamientoUI();
