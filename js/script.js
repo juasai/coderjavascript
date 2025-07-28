@@ -284,8 +284,8 @@ function mostrarEquipamientoDetallado() {
 
 // Función para agregar un item al equipamiento
 function agregarItem(index) {
-    if (equipamiento.length >= 5) {
-        showNotification("¡Máximo de 5 items alcanzado!", false);
+    if (equipamiento.length >= 6) {
+        showNotification("¡Máximo de 6 items alcanzado!", false);
         return;
     }
 
