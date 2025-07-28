@@ -7,7 +7,7 @@ let itemsTanque = [];
 // Función para cargar los items desde el JSON externo
 async function cargarItems() {
     try {
-        showNotification("Cargando items...", true);
+        showNotification("Cargando items...", true,"center");
         const response = await fetch(ITEMS_JSON_URL);
         if (!response.ok) {
             throw new Error('No se pudo cargar los items');
@@ -37,6 +37,7 @@ async function cargarItems() {
             }
         ];
         showNotification("Usando datos locales. No se pudieron cargar los items remotos.", false);
+
     }
 }
 
@@ -66,14 +67,24 @@ const viewEquipmentTab = document.getElementById('viewEquipmentTab');
 const notificationElement = document.getElementById('notification');
 
 // Función para mostrar notificación
-function showNotification(message, isSuccess = true) {
-    notificationElement.textContent = message;
-    notificationElement.style.backgroundColor = isSuccess ? '#2ecc71' : '#e74c3c';
-    notificationElement.style.display = 'block';
+function showNotification(message, isSuccess = true, position = "top-end") {
+    //notificationElement.textContent = message;
+    //notificationElement.style.backgroundColor = isSuccess ? '#2ecc71' : '#e74c3c';
+    //notificationElement.style.display = 'block';
 
-    setTimeout(() => {
-        notificationElement.style.display = 'none';
-    }, 3000);
+    //setTimeout(() => {
+    //    notificationElement.style.display = 'none';
+    //}, 3000);
+    //
+    Swal.fire({
+       //position: "top-end",
+       position: position,
+       icon: isSuccess ? "success" : "error",
+       title: message,
+       showConfirmButton: false,
+       timer: 1500
+    });
+
 }
 
 // Función para guardar el estado en LocalStorage
@@ -324,7 +335,7 @@ function reiniciarEquipamiento() {
     localStorage.removeItem('precioTotal');
     localStorage.removeItem('efectosUnicos');
 
-    showNotification("Equipamiento reiniciado.");
+    showNotification("Equipamiento reiniciado.",false,"center");
 }
 
 // Event Listeners
