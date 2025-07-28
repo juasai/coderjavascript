@@ -67,7 +67,7 @@ const viewEquipmentTab = document.getElementById('viewEquipmentTab');
 const notificationElement = document.getElementById('notification');
 
 // Función para mostrar notificación
-function showNotification(message, isSuccess = true, position = "top-end") {
+function showNotification(message, isSuccess = true, position = "top-end",image=null) {
     //notificationElement.textContent = message;
     //notificationElement.style.backgroundColor = isSuccess ? '#2ecc71' : '#e74c3c';
     //notificationElement.style.display = 'block';
@@ -80,6 +80,7 @@ function showNotification(message, isSuccess = true, position = "top-end") {
        //position: "top-end",
        position: position,
        icon: isSuccess ? "success" : "error",
+       imageUrl: image,
        title: message,
        showConfirmButton: false,
        timer: 1500
@@ -297,7 +298,7 @@ function agregarItem(index) {
     actualizarEstadisticasUI();
     actualizarEfectosUnicosUI();
 
-    showNotification(`¡${item.nombre} agregado!`);
+    showNotification(`¡${item.nombre} agregado!`,true,"top-end",`${item.imagen}`);
     guardarEstado();
 }
 
@@ -311,6 +312,7 @@ function eliminarItem(index) {
     actualizarEfectosUnicosUI();
 
     showNotification(`¡${itemEliminado.nombre} eliminado!`);
+    showNotification(`¡${itemEliminado.nombre} eliminado!`,true,"top-end",`${itemEliminado.imagen}`);
     guardarEstado();
 }
 
@@ -335,7 +337,7 @@ function reiniciarEquipamiento() {
     localStorage.removeItem('precioTotal');
     localStorage.removeItem('efectosUnicos');
 
-    showNotification("Equipamiento reiniciado.",false,"center");
+    showNotification("Equipamiento reiniciado.",true,"center");
 }
 
 // Event Listeners
