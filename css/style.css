@@ -2,7 +2,10 @@
   font-family: "Nova Flat", system-ui;
   color: #F0F4EF;
 }
-
+.theme_fonts_black {
+  font-family: "Nova Flat", system-ui;
+  color: #000000;
+}
 h1 {
   font-family: "Nova Flat", system-ui;
   color: #F0F4EF;

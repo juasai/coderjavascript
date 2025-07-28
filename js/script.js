@@ -179,7 +179,7 @@ function actualizarEquipamientoUI() {
         itemInfo.textContent = item.nombre;
 
         const removeBtn = document.createElement('button');
-        removeBtn.className = 'remove-btn';
+        removeBtn.className = 'remove-btn img-button';
         removeBtn.textContent = 'Eliminar';
         removeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
